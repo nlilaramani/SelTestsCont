@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: chromeremote
+  namespace: nlilaramani-dev
+  labels:
+    app: chromeremote
+spec:
+  type: ClusterIP
+  ports:
+    - port: 4444
+      targetPort: 4444
+      protocol: TCP
+  selector:
+    app: chromeremote
