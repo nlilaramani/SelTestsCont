@@ -1,12 +1,10 @@
 package org.nl.test;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -26,7 +24,7 @@ public class ChromeTest {
         //driver = new ChromeDriver();
         ChromeOptions options=new ChromeOptions();
         try {
-            driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
+            driver = new RemoteWebDriver(new URL("http://chromeremote:4444"), options);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
