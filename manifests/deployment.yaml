@@ -1,0 +1,27 @@
+kind: "Deployment"
+apiVersion: "apps/v1"
+metadata:
+  name: chromeremote
+  namespace: nlilaramani-dev
+  labels:
+    app: chromeremote
+spec:
+  selector:
+    matchLabels:
+      app: chromeremote
+  template: 
+    metadata:
+      labels:
+        app: chromeremote
+    spec:
+      containers:
+        - name: chromeremote
+          image: selenium/standalone-chrome:latest
+          ports:
+            - containerPort: 4444
+              protocol: "TCP"
+  replicas: 1
+  strategy: 
+    type: RollingUpdate
+  revisionHistoryLimit: 2 
+  minReadySeconds: 0 
